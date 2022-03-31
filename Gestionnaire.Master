@@ -1,0 +1,229 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Gestionnaire.master.cs" Inherits="Pfe2022.Gestionnaire" %>
+
+
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+       <link rel="stylesheet" href="../assets/vendors/mdi/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="../assets/vendors/flag-icon-css/css/flag-icon.min.css">
+    <link rel="stylesheet" href="../assets/vendors/css/vendor.bundle.base.css">
+ 
+    <link rel="stylesheet" href="../assets/vendors/jquery-bar-rating/css-stars.css" />
+    <link rel="stylesheet" href="../assets/vendors/font-awesome/css/font-awesome.min.css" />
+      
+      <link rel="icon" href="images/iconn.PNG"  />
+    <link rel="stylesheet" href="../assets/css/demo_2/style.css" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+
+</head>
+<body>
+    <form id="form1" runat="server">
+
+
+
+        <div class="container-scroller">
+      <div class="row p-0 m-0 proBanner" id="proBanner">
+        <div class="col-md-12 p-0 m-0">
+        
+        </div>
+      </div>
+      <!-- partial:partials/_horizontal-navbar.html -->
+      <div class="horizontal-menu">
+        <nav class="navbar top-navbar col-lg-12 col-12 p-0">
+          <div class="container">
+            <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
+              <a class="" >
+                <img src="/images/Capture5.PNG"  "/>
+
+
+           
+              </a>
+            
+            </div>
+            <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
+              <ul class="navbar-nav mr-lg-2">
+                <li class="nav-item nav-search d-none d-lg-block">
+                  <div class="input-group">
+                    <div class="input-group-prepend hover-cursor" id="navbar-search-icon">
+                    
+                    
+                  </div>
+                </li>
+              </ul>
+              <ul class="navbar-nav navbar-nav-right">
+                <li class="nav-item nav-profile dropdown">
+                  <a class="nav-link" id="profileDropdown" href="#" data-bs-toggle="dropdown" aria-expanded="false">
+                    <div class="nav-profile-img">
+                      <img  src="images/user2.jpg"  />
+                    </div>
+                    <div class="nav-profile-text">
+                      <p class="text-black font-weight-semibold m-0"> Gestionnaire </p>
+                      <span class="font-13 online-color">Connécté<i class="mdi mdi-chevron-down"></i></span>
+                    </div>
+                  </a>
+                  <div class="dropdown-menu navbar-dropdown" aria-labelledby="profileDropdown">
+                 
+                    <div class="dropdown-divider" ></div>
+                            <a class="dropdown-item" href="GérerProfil2.aspx" style="background-color:lightgray">
+                      <i class="mdi mdi-settings me-2 text-primary"></i> Profil </a>
+                    <a class="dropdown-item" href="authentification.aspx" style="background-color:white">
+                      <i class="mdi mdi-logout me-2 text-primary"></i> Déconnexion </a>
+                  
+                  </div>
+                </li>
+              </ul>
+              <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="horizontal-menu-toggle">
+                <span class="mdi mdi-menu"></span>
+              </button>
+            </div>
+          </div>
+        </nav>
+       <nav class="bottom-navbar" style="background-color:cornflowerblue">
+          <div class="container">
+            <ul class="nav page-navigation">
+             <li class="nav-item">
+                <a class="nav-link" href="">
+                  <i class="mdi mdi-compass-outline menu-icon"  style="color:white"></i>
+                  <span class="menu-title"   style="color:white">Tableau De Board</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="mdi mdi-contacts menu-icon"   style="color:white"></i>
+                  <span class="menu-title" style="color:white">Utilisateurs</span>
+                  <i class="menu-arrow"  style="color:white"></i>
+                </a>
+                <div class="submenu">
+                  <ul class="submenu-item">
+                    <li class="nav-item">
+                      <a class="nav-link" href="ListeVisiteur.aspx">Liste Des Visiteurs</a>
+                    </li>
+                  
+                  </ul>
+                </div>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" >
+                  <i class="mdi mdi-clipboard-text menu-icon"  style="color:white"></i>
+                  <span class="menu-title"  style="color:white">Tissus</span>
+                     <i class="menu-arrow"  style="color:white"></i>
+                </a>
+                    <div class="submenu">
+                  <ul class="submenu-item">
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Ajouter Tissu</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Liste Des Tissus</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Rapport qualité Tissus</a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" >
+                  <i class="mdi mdi-table-large menu-icon"  style="color:white"></i>
+                  <span class="menu-title"  style="color:white">Commandes</span>
+                       <i class="menu-arrow"  style="color:white"></i>
+                </a>
+                    <div class="submenu">
+                  <ul class="submenu-item">
+                    <li class="nav-item">
+                      <a class="nav-link" href="AjouterCommande2.aspx">Ajouter  Commande</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="ConsulterCommande2.aspx">Liste Des Commandes</a>
+                    </li>
+                   
+                  </ul>
+                </div>
+              </li>
+
+
+
+
+              <li class="nav-item">
+                <a class="nav-link" >
+                  <i class="mdi mdi-contacts menu-icon"  style="color:white"></i>
+                  <span class="menu-title"  style="color:white">Fournisseurs</span>
+                       <i class="menu-arrow"  style="color:white"></i>
+                </a>
+
+
+
+                       <div class="submenu">
+                  <ul class="submenu-item">
+                    
+                    <li class="nav-item">
+                      <a class="nav-link" href="Listefournisseurs.aspx">Liste Des Fournisseurs</a>
+                    </li>
+                   
+                  </ul>
+                </div>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" >
+                  <i class= "mdi mdi-contacts menu-icon" style="color:white"></i>
+                  <span class="menu-title"  style="color:white">Clients</span>
+   <i class="menu-arrow"  style="color:white"></i>
+                </a>
+                       <div class="submenu">
+                  <ul class="submenu-item">
+                    
+                    <li class="nav-item">
+                      <a class="nav-link" href="ListeClients.aspx">Liste Des Clients</a>
+                    </li>
+                   
+                  </ul>
+                </div>
+              </li>
+         
+              <li class="nav-item">
+               
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+
+    
+   
+  
+    <!-- container-scroller -->
+    <!-- plugins:js -->
+    <script src="../assets/vendors/js/vendor.bundle.base.js"></script>
+    <!-- endinject -->
+    <!-- Plugin js for this page -->
+    <script src="../assets/vendors/jquery-bar-rating/jquery.barrating.min.js"></script>
+    <script src="../assets/vendors/chart.js/Chart.min.js"></script>
+    <script src="../assets/vendors/flot/jquery.flot.js"></script>
+    <script src="../assets/vendors/flot/jquery.flot.resize.js"></script>
+    <script src="../assets/vendors/flot/jquery.flot.categories.js"></script>
+    <script src="../assets/vendors/flot/jquery.flot.fillbetween.js"></script>
+    <script src="../assets/vendors/flot/jquery.flot.stack.js"></script>
+    <script src="../assets/js/jquery.cookie.js" type="text/javascript"></script>
+    <!-- End plugin js for this page -->
+    <!-- inject:js -->
+    <script src="../assets/js/off-canvas.js"></script>
+    <script src="../assets/js/hoverable-collapse.js"></script>
+    <script src="../assets/js/misc.js"></script>
+    <script src="../assets/js/settings.js"></script>
+    <script src="../assets/js/todolist.js"></script>
+    <!-- endinject -->
+    <!-- Custom js for this page -->
+    <script src="../assets/js/dashboard.js"></script>
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+</body>
+</html>
+
+
