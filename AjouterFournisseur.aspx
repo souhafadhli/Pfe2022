@@ -76,9 +76,9 @@
                 'error'
             )
         }
-        function Ajoute() {
+        function ajouter() {
             Swal.fire(
-                'La Commande est ajoutée ',
+                'Le fournisseur est ajoutée ',
                 'avec succées',
                 'success'
             )
@@ -96,190 +96,217 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
 
-	<br />
-	<br />
-	<br />
-    <div class="container">
-<div class="row gutters">
-<div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12">
-<div class="card h-100">
-	<div class="card-body">
-		<div class="account-settings">
-			<div class="user-profile">
-			
-					<img src="images/ffk.png"  width="260px">
-			
-				
-			
-			</div>
-			<div class="about">
-				<h4> Ajouter </h4>
-				<p>Citez tous les informations nécessaires pour ajouter des fournisseurs.</p>
-			</div>
-		</div>
-	</div>
-</div>
-</div>
-<div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12">
-<div>
-	<div>
-		<div class="row gutters">
-			<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-				<h6 class="mb-2 text-primary"><b style="color:blue">Données Générales</b></h6>
-			</div>
-			
-			<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-				<div class="form-group">
-					<label for="phone">Fournisseur</label>
-		 <asp:TextBox  id="nomFournisseur" AutoComplete="Off" runat="server" class="form-control" placeholder="Entrer le nom du fournisseur"></asp:TextBox>
-				
-                </div>
-			</div>
-			<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-				<div class="form-group">
-					<label for="fullName">GOTS PJ</label>
-					 <asp:TextBox  id="Gotsp" AutoComplete="Off" runat="server" class="form-control"></asp:TextBox>
-					
-				</div>
-			</div>
-			<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-				<div class="form-group">
-					<label for="eMail">GOTS date d'expiration</label>
-					   <asp:TextBox  id="Gotsd" AutoComplete="Off" runat="server" class="form-control" Type="date"></asp:TextBox>
-				
-				</div>
-			</div>
-			
-			<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-				<div class="form-group">
-					<label for="website">GRS Pj</label>
-					            <asp:TextBox  id="grs" AutoComplete="Off" class="form-control" runat="server"  ></asp:TextBox>
-				
-				</div>
-			</div>
-		</div>
-		<div class="row gutters">
-		
-			<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-				<div class="form-group">
-					<label for="Street">GRS date d'expiration</label>
-					    <asp:TextBox  id="grsdd" AutoComplete="Off" runat="server" Type="date"  class="form-control"></asp:TextBox>
-				
-				</div>
-			</div>
 
-			<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-				<div class="form-group">
-					<label for="ciTy">OCS Pj</label>
-					    <asp:TextBox  id="ocs" AutoComplete="Off" runat="server"  class="form-control" ></asp:TextBox>
-				
-				</div>
-			</div>
-		
-			<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-				<div class="form-group">
-					<label for="zIp">OSC date d'expiration</label>
-					   <asp:TextBox     id="oscd" AutoComplete="Off" class="form-control"  Type="date"  runat="server"></asp:TextBox>
-				
-				</div>
-			</div>
-				
-				<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-				<div class="form-group">
-					<label for="zIp">RCS Pj</label>
-					   <asp:TextBox     id="rcs" AutoComplete="Off" class="form-control"    runat="server"></asp:TextBox>
-				
-				</div>
+	<br />
 
-			</div>
-			<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-				<div class="form-group">
-					<label for="zIp">RCS date d'expiration</label>
-					   <asp:TextBox     id="rcsd" AutoComplete="Off" class="form-control"  Type="date"  runat="server"></asp:TextBox>
-				
-				</div>
-			</div>
-		</div>
-		<div class="row gutters">
-			<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-				<div class="text-right">
-							 <asp:Button  runat="server" text="Ajouter"  class="btn btn-primary btn-lg btn-radius"  OnClick="Unnamed_Click"  />  
-               
-   <asp:Button  runat="server" text="Annuler" class="btn btn-warning btn-lg btn-radius" OnClick="Unnamed_Click1" />
-				</div>
-			</div>
-		</div>
-	</div>
+    <div class="wrapper bg-white mt-sm-5">
+    <h4 class="pb-4 border-bottom" >Fournisseur</h4>
+    <div class="d-flex align-items-start py-3 border-bottom"> <img src="images/offre.png" width="120px" >
+        <div class="pl-sm-4 pl-2" id="img-section"> 
+            <br />
+            <br />
+            <p>Citez tous les informations nécessaires <br /> pour ajouter des fournisseurs.</p> 
+        </div>
+    </div>
+    <div class="py-2">
+      
+            <div class="col-md-6"> <label >Nom fournisseur</label>
+            
+             <asp:TextBox  AutoComplete="Off" id="nomFournisseur" class="bg-light form-control" placeholder="fournisseur"  runat="server"  width="500px">
+
+             </asp:TextBox>
+
+                   </div>
+
+         
+             
+        </div>
+
+        <div class="row py-2">
+            
+             <div class="col-md-6"> <label >GOTS PJ</label>
+                 <asp:TextBox  AutoComplete="Off" id="Gotsp" class="bg-light form-control" placeholder="GOTS PJ"  runat="server"   width="220px">
+
+             </asp:TextBox>
+                 </div>
+            
+            
+            <div class="col-md-6"> <label >Gots date d'expiration</label> 
+                             <asp:TextBox  AutoComplete="Off" id="Gotsd" class="bg-light form-control" placeholder="GOTS PJ"  Type="date" runat="server" width="220px" >
+
+             </asp:TextBox>
+
+  </div>
+           
+        </div>
+
+
+        <div class="row py-2">
+
+             <div class="col-md-6 pt-md-0 pt-3"> <label >GRS PJ</label> 
+              <asp:TextBox  AutoComplete="Off" id="grs" class="bg-light form-control" placeholder="GRS PJ"  runat="server"  width="220px">
+
+             </asp:TextBox>
+            </div>
+
+            <div class="col-md-6"> <label >GRS date d'expiration </label> 
+                 <asp:TextBox  AutoComplete="Off" id="grsdd" class="bg-light form-control" type="date"  runat="server"  width="220px">
+
+             </asp:TextBox>
+
+            </div>
+            <div class="col-md-6 pt-md-0 pt-3" id="lang"> <label >OCS PJ</label>
+                  <asp:TextBox  AutoComplete="Off" id="ocs" class="bg-light form-control" placeholder="OCS"  runat="server" width="220px" >
+
+             </asp:TextBox>
+        </div>
+            
+                        <div class="col-md-6"> <label >OSC date d'expiration </label> 
+                 <asp:TextBox  AutoComplete="Off" id="oscd" class="bg-light form-control" type="date"  runat="server" width="220px" >
+
+             </asp:TextBox>
+
+            </div>
+            <div class="col-md-6 pt-md-0 pt-3" id="lang"> <label >RCS PJ</label>
+                  <asp:TextBox  AutoComplete="Off" id="rcs" class="bg-light form-control" placeholder="RCS"  runat="server" width="220px"  >
+
+             </asp:TextBox>
+        </div>
+               <div class="col-md-6 pt-md-0 pt-3" id="lang"> <label >RCS date d'expiration</label>
+                  <asp:TextBox  AutoComplete="Off" id="rcsd" class="bg-light form-control"  type="date"  runat="server"  width="220px" >
+
+             </asp:TextBox>
+        </div>
+
+        <div class="py-3 pb-4 border-bottom">
+            
+               <asp:Button  runat="server" text="Ajouter" class="btn btn-primary mr-3" OnClick="Unnamed_Click"/>
+
+               <asp:Button  runat="server" text="Annuler" class="btn border button" OnClick="Unnamed_Click1"/>
+     
+        </div>
+
+       
+ 
 </div>
-</div>
-</div>
-</div>
-          <style type="text/css">
+ 
+    <style type="text/css">
+        @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box
+}
+
 body {
-    margin: 0;
-   
-    color: #2e323c;
-    background: #f5f6fa;
-    position: relative;
-    height: 100%;
+    font-family: 'Poppins', sans-serif;
+  
 }
-.account-settings .user-profile {
-    margin: 0 0 1rem 0;
-    padding-bottom: 1rem;
-    text-align: center;
+
+.wrapper {
+    padding: 30px 50px;
+    border: 1px solid #ddd;
+    border-radius: 15px;
+    margin: 10px auto;
+    max-width: 600px
 }
-.account-settings .user-profile .user-avatar {
-    margin: 0 0 1rem 0;
+
+h4 {
+    letter-spacing: -1px;
+    font-weight: 400
 }
-.account-settings .user-profile .user-avatar img {
-    width: 90px;
-    height: 90px;
-    -webkit-border-radius: 100px;
-    -moz-border-radius: 100px;
-    border-radius: 100px;
+
+.img {
+    width: 70px;
+    height: 70px;
+    border-radius: 6px;
+    object-fit: cover
 }
-.account-settings .user-profile h5.user-name {
-    margin: 0 0 0.5rem 0;
+
+#img-section p,
+#deactivate p {
+    font-size: 12px;
+    color: #777;
+    margin-bottom: 10px;
+    text-align: justify
 }
-.account-settings .user-profile h6.user-email {
-    margin: 0;
-    font-size: 0.8rem;
-    font-weight: 400;
-    color: #9fa8b9;
+
+#img-section b,
+#img-section button,
+#deactivate b {
+    font-size: 14px
 }
-.account-settings .about {
-    margin: 2rem 0 0 0;
-    text-align: center;
+
+label {
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 500;
+    color: #777;
+    padding-left: 3px
 }
-.account-settings .about h5 {
-    margin: 0 0 15px 0;
-    color: #007ae1;
-}
-.account-settings .about p {
-    font-size: 0.825rem;
-}
+
 .form-control {
-    border: 1px solid #cfd1d8;
-    -webkit-border-radius: 2px;
-    -moz-border-radius: 2px;
-    border-radius: 2px;
-    font-size: .825rem;
-    background: #ffffff;
-    color: #2e323c;
+    border-radius: 10px
 }
 
-.card {
-    background: #ffffff;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    border-radius: 5px;
-    border: 0;
-    margin-bottom: 1rem;
+input[placeholder] {
+    font-weight: 500
 }
 
+.form-control:focus {
+    box-shadow: none;
+    border: 1.5px solid #0779e4
+}
 
-</style>
+select {
+    display: block;
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    height: 40px;
+    padding: 5px 10px
+}
 
+select:focus {
+    outline: none
+}
+
+.button {
+    background-color: #fff;
+    color: #0779e4
+}
+
+.button:hover {
+    background-color: #0779e4;
+    color: #fff
+}
+
+.btn-primary {
+    background-color: #0779e4
+}
+
+.danger {
+    background-color: #fff;
+    color: #e20404;
+    border: 1px solid #ddd
+}
+
+.danger:hover {
+    background-color: #e20404;
+    color: #fff
+}
+
+@media(max-width:576px) {
+    .wrapper {
+        padding: 25px 20px
+    }
+
+    #deactivate {
+        line-height: 18px
+    }
+}
+    </style>
 
    
 </asp:Content>
