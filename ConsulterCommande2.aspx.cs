@@ -6,7 +6,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace Pfe2022
+namespace WebApplication
 {
     public partial class ConsulterCommande2 : System.Web.UI.Page
     {
@@ -24,7 +24,6 @@ namespace Pfe2022
                 Session.Remove("login");
                 Response.Redirect("authentification.aspx");
             }
-
         }
         /*get role*/
         public string getrole()
@@ -57,6 +56,7 @@ namespace Pfe2022
             }
         }
 
+
         public void VideChamp()
         {
             reference.Text = "";
@@ -69,7 +69,7 @@ namespace Pfe2022
         }
         protected void Confirmer_Click(object sender, EventArgs e)
         {
-            if (Client.SelectedValue == "")
+            if (nomclient.SelectedValue == "")
             {
                 ClientScript.RegisterStartupScript(this.GetType(), "randomtext", "client()", true);
             }
@@ -82,7 +82,7 @@ namespace Pfe2022
                 chaine_connexion = "Data Source=DESKTOP-DTUE644;Initial Catalog=MIC;Persist Security Info=True;User ID=sa;Password=Sh123@";
                 con = new SqlConnection(chaine_connexion);
                 con.Open();
-                req = "update Commande  set reference='" + reference.Text + "',ordre='" + ordre.Text + "',lavage='" + lavage.Text + "',modele='" + modele.Text + "',client='" + Client.SelectedValue + "'where id='" + ID.Text + "'";
+                req = "update Commande  set reference='" + reference.Text + "',ordre='" + ordre.Text + "',lavage='" + lavage.Text + "',modele='" + modele.Text + "',client='" + nomclient.SelectedValue + "'where id='" + ID.Text + "'";
                 cmd = new SqlCommand(req, con);
                 ClientScript.RegisterStartupScript(this.GetType(), "randomtext", "modifier()", true);
                 cmd.ExecuteNonQuery();
@@ -105,7 +105,7 @@ namespace Pfe2022
             ordre.Text = GridView1.Rows[rowind].Cells[2].Text;
             lavage.Text = GridView1.Rows[rowind].Cells[3].Text;
             modele.Text = GridView1.Rows[rowind].Cells[4].Text;
-            Client.SelectedValue = GridView1.Rows[rowind].Cells[5].Text;
+            nomclient.SelectedValue = GridView1.Rows[rowind].Cells[5].Text;
 
         }
 
@@ -126,7 +126,6 @@ namespace Pfe2022
             cmd.ExecuteNonQuery();
             con.Close();
         }
-
         /*get reference*/
         public string getreference()
         {

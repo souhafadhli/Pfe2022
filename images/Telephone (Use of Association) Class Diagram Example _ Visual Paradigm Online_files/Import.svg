@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 14.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 43363)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="50px" height="50px" viewBox="0 0 50 50" enable-background="new 0 0 50 50" xml:space="preserve">
+<g>
+	<g>
+		<g>
+			<g>
+				<defs>
+					<rect id="SVGID_1_" y="-0.259" width="50" height="50.259"/>
+				</defs>
+				<clipPath id="SVGID_2_">
+					<use xlink:href="#SVGID_1_"  overflow="visible"/>
+				</clipPath>
+				
+					<line clip-path="url(#SVGID_2_)" fill="none" stroke="#000000" stroke-width="3" stroke-dasharray="4,4,4,4,4,4" x1="40.05" y1="32.725" x2="-7.062" y2="32.725"/>
+			</g>
+		</g>
+	</g>
+</g>
+<g>
+	<g>
+		<g>
+			<g>
+				<defs>
+					<rect id="SVGID_3_" y="-0.259" width="50" height="50.259"/>
+				</defs>
+				<clipPath id="SVGID_4_">
+					<use xlink:href="#SVGID_3_"  overflow="visible"/>
+				</clipPath>
+				<polygon clip-path="url(#SVGID_4_)" fill="#010101" points="38.775,36.543 45.389,32.727 38.775,28.904 36.271,27.463 
+					36.271,25.088 42.881,28.904 49.493,32.727 42.881,36.543 36.271,40.355 36.271,37.986 				"/>
+			</g>
+		</g>
+	</g>
+</g>
+<polygon points="7.838,22.44 3.808,18.781 7.838,15.118 9.367,13.73 9.367,11.455 5.334,15.118 1.301,18.781 5.334,22.44 
+	9.367,26.102 9.367,23.829 "/>
+<polygon points="14.588,22.44 10.558,18.781 14.588,15.118 16.117,13.73 16.117,11.455 12.084,15.118 8.051,18.781 12.084,22.44 
+	16.117,26.102 16.117,23.829 "/>
+<polygon points="40.635,23.829 40.635,26.102 44.666,22.44 48.699,18.781 44.666,15.118 40.635,11.455 40.635,13.73 42.162,15.118 
+	46.193,18.781 42.162,22.44 "/>
+<polygon points="33.885,23.829 33.885,26.102 37.916,22.44 41.949,18.781 37.916,15.118 33.885,11.455 33.885,13.73 35.412,15.118 
+	39.443,18.781 35.412,22.44 "/>
+<g>
+	<path d="M23.446,11.152V8.167h3.226v2.985H23.446z M23.446,25V12.806h3.226V25H23.446z"/>
+</g>
+</svg>

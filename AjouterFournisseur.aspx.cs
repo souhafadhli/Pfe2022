@@ -6,7 +6,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace Pfe2022
+namespace WebApplication
 {
     public partial class AjouterFournisseur : System.Web.UI.Page
     {
@@ -24,8 +24,8 @@ namespace Pfe2022
                 Session.Remove("login");
                 Response.Redirect("authentification.aspx");
             }
-
         }
+
         protected void Unnamed_Click(object sender, EventArgs e)
         {
             if (Gotsp.Text == "" || Gotsd.Text == "" || grs.Text == "" || grsdd.Text == "" || ocs.Text == "" || oscd.Text == "" || rcs.Text == "" || rcsd.Text == "")
@@ -434,6 +434,4 @@ namespace Pfe2022
 
         }
     }
-
 }
- 

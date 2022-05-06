@@ -6,7 +6,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace Pfe2022
+namespace WebApplication
 {
     public partial class AjouterCommande : System.Web.UI.Page
     {
@@ -24,11 +24,8 @@ namespace Pfe2022
                 Session.Remove("login");
                 Response.Redirect("authentification.aspx");
             }
-
         }
 
-
-        /*get role*/
         public string getrole()
         {
             string chaine_connexion = null;
@@ -64,6 +61,7 @@ namespace Pfe2022
             ordre.Text = "";
             lavage.Text = "";
             modele.Text = "";
+
 
 
         }
@@ -124,7 +122,7 @@ namespace Pfe2022
         protected void Confirmer_Click(object sender, EventArgs e)
         {
             string vide = "";
-            if (reference.Text == vide || ordre.Text == vide || lavage.Text == vide || modele.Text == vide || Cli.SelectedValue == vide)
+            if (reference.Text == vide || ordre.Text == vide || lavage.Text == vide || modele.Text == vide)
             {
                 // erreur
                 ClientScript.RegisterStartupScript(this.GetType(), "randomtext", "vide();", true);
@@ -139,10 +137,7 @@ namespace Pfe2022
                 // erreur
                 ClientScript.RegisterStartupScript(this.GetType(), "randomtext", "errorPO();", true);
             }
-            if (Cli.SelectedValue == "")
-            {
-                ClientScript.RegisterStartupScript(this.GetType(), "randomtext", "role()", true);
-            }
+
             else
             {
                 string chaine_connexion = null;
@@ -156,7 +151,7 @@ namespace Pfe2022
 
 
                 con.Open();
-                req = " insert into Commande(reference,ordre,lavage,modele,client) values('" + reference.Text + "', '" + ordre.Text + "','" + lavage.Text + "','" + modele.Text + "','" + Cli.SelectedValue + "')";
+                req = " insert into Commande(reference,ordre,lavage,modele,client) values('" + reference.Text + "', '" + ordre.Text + "','" + lavage.Text + "','" + modele.Text + "','" + nomclient.SelectedValue + "')";
                 cmd = new SqlCommand(req, con);
                 cmd.ExecuteNonQuery();
                 cmd.Dispose();
@@ -172,4 +167,3 @@ namespace Pfe2022
         }
     }
 }
-    

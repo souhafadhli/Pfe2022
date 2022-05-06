@@ -7,12 +7,21 @@
 // </généré automatiquement>
 //------------------------------------------------------------------------------
 
-namespace Pfe2022
+namespace WebApplication
 {
 
 
     public partial class Listefournisseurs
     {
+
+        /// <summary>
+        /// Contrôle txtsearch.
+        /// </summary>
+        /// <remarks>
+        /// Champ généré automatiquement.
+        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtsearch;
 
         /// <summary>
         /// Contrôle SqlDataSource1.
@@ -22,6 +31,15 @@ namespace Pfe2022
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1;
+
+        /// <summary>
+        /// Contrôle SqlDataSource2.
+        /// </summary>
+        /// <remarks>
+        /// Champ généré automatiquement.
+        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource2;
 
         /// <summary>
         /// Contrôle GridView1.

@@ -1,6 +1,8 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin.Master" AutoEventWireup="true" CodeBehind="AjouterUtilisateur.aspx.cs" Inherits="Pfe2022.AjouterUtilisateur" %>
-<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server"> <title>Ajouter Utilisateur</title>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Administrateur.Master" AutoEventWireup="true" CodeBehind="AjouterUtilisateur.aspx.cs" Inherits="WebApplication.AjouterUtilisateur" %>
 
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server"> <title>Ajouter Utilisateur</title>
+	   <title>Ajouter utilisateur</title>
 	<script src="swalert.js" type="text/javascript"></script>
 	 <script>
          function vide() {
@@ -194,4 +196,5 @@
              
 
 </asp:Content>
+
 

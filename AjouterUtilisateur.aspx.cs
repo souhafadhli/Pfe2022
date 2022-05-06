@@ -6,7 +6,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace Pfe2022
+namespace WebApplication
 {
     public partial class AjouterUtilisateur : System.Web.UI.Page
     {
@@ -21,11 +21,10 @@ namespace Pfe2022
             }
             else
             {
-                Session.Remove("username");
+                Session.Remove("login");
                 Response.Redirect("authentification.aspx");
             }
         }
-
 
 
         public void vider()
@@ -263,4 +262,4 @@ namespace Pfe2022
             vider();
         }
     }
-    }
+}

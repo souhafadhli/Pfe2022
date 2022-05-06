@@ -6,7 +6,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace Pfe2022
+namespace WebApplication
 {
     public partial class ConsulterFournisseur : System.Web.UI.Page
     {
@@ -24,9 +24,7 @@ namespace Pfe2022
                 Session.Remove("login");
                 Response.Redirect("authentification.aspx");
             }
-
         }
-        /*get role*/
         public string getrole()
         {
             string chaine_connexion = null;

@@ -1,7 +1,8 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin.Master" AutoEventWireup="true" CodeBehind="AjouterCommande.aspx.cs" Inherits="Pfe2022.AjouterCommande" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Administrateur.Master" AutoEventWireup="true" CodeBehind="AjouterCommande.aspx.cs" Inherits="WebApplication.AjouterCommande" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server"><title>Ajouter Commande</title>
 
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+       <title>Ajouter commande</title>
     <script src="swalert.js" type="text/javascript"></script>
     <script>
       
@@ -34,9 +35,9 @@
    'error'
  )
         }
-        function role() {
+        function client() {
             Swal.fire(
-                ' obligatoire d ajouter un role ',
+                ' obligatoire d ajouter un client ',
                 'Veuillez le vérifier et réessayer',
                 'error'
             )
@@ -63,69 +64,58 @@
 
             
 
-                <form class="mx-1 mx-md-4">        <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Commande </p>
+                <form class="mx-1 mx-md-4">        <p class="text-center h1 fw-bold mb-5 " >Commande </p>
                      <div class="d-flex flex-row align-items-center mb-4">
                   
                     <div class="form-outline flex-fill mb-0">
-                     <asp:TextBox  id="reference" AutoComplete="Off" runat="server" class="form-control" ></asp:TextBox>
-                      <label class="form-label" for="form3Example1c">Référence</label>
+                              <label class="form-label" for="form3Example1c">Référence</label>
+                     <asp:TextBox  id="reference" AutoComplete="Off" runat="server" class="form-control" style="border:none;outline:none;border-bottom:2px solid #ddd;width:100%;padding-bottom:10px"></asp:TextBox>
+                
                     </div>
                   </div>
                      <div class="d-flex flex-row align-items-center mb-4">
                   
                     <div class="form-outline flex-fill mb-0">
-                        <asp:TextBox  id="ordre" AutoComplete="Off" runat="server" class="form-control"></asp:TextBox>
-                      <label class="form-label" for="form3Example1c">Ordre de production</label>
+                           <label class="form-label" for="form3Example1c">Ordre de production</label>
+                        <asp:TextBox  id="ordre" AutoComplete="Off" runat="server" class="form-control" style="border:none;outline:none;border-bottom:2px solid #ddd;width:100%;padding-bottom:10px"></asp:TextBox>
+                   
                     </div>
                   </div>
 
                   <div class="d-flex flex-row align-items-center mb-4">
                 
                     <div class="form-outline flex-fill mb-0">
-                        <asp:TextBox  id="lavage" AutoComplete="Off" runat="server" class="form-control"></asp:TextBox>
-                      <label class="form-label" for="form3Example1c">Lavage</label>
+                            <label class="form-label" for="form3Example1c">Lavage</label>
+                        <asp:TextBox  id="lavage" AutoComplete="Off" runat="server" class="form-control" style="border:none;outline:none;border-bottom:2px solid #ddd;width:100%;padding-bottom:10px"></asp:TextBox>
+                  
                     </div>
                   </div>
 
                   <div class="d-flex flex-row align-items-center mb-4">
                 
                     <div class="form-outline flex-fill mb-0">
-    <asp:TextBox  id="modele" AutoComplete="Off" runat="server" class="form-control"></asp:TextBox>
-                      <label class="form-label" for="form3Example3c">Modéle</label>
+                                              <label class="form-label" for="form3Example3c">Modéle</label>
+    <asp:TextBox  id="modele" AutoComplete="Off" runat="server" class="form-control"  style="border:none;outline:none;border-bottom:2px solid #ddd;width:100%;padding-bottom:10px"></asp:TextBox>
+
                     </div>
                   </div>
 
-                  <div class="d-flex flex-row align-items-center mb-4">
-                  
+            <div class="d-flex flex-row align-items-center mb-4">
+                
                     <div class="form-outline flex-fill mb-0">
-                        
-                       <asp:DropDownList ID="Cli" runat="server"  Height="50px"  class="form-control"> 
-                                    <asp:ListItem></asp:ListItem>
-                            	<asp:ListItem>Zara</asp:ListItem>
-                            <asp:ListItem>Bershka</asp:ListItem>
-                            <asp:ListItem>Pull&Bear</asp:ListItem>
-                        </asp:DropDownList>
-                        <label class="form-label" for="form3Example4c">Client</label>
-
-
-                       
+                               <label class="form-label" for="form3Example3c">Client</label>
+   <asp:DropDownList ID="nomclient" runat="server"  DataSourceID="SqlDataSource1" DataTextField="nom" DataValueField="nom" style="border:none;outline:none;border-bottom:2px solid #ddd;width:100%;padding-bottom:10px"></asp:DropDownList>
+                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:MICConnectionString %>" SelectCommand="SELECT [nom] FROM [Client]"></asp:SqlDataSource>
+               
                     </div>
                   </div>
-
                
 
 
-                  <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
-
-                  </div>
-                    	<div class="row gutters">
-			<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-				<div class="text-right">
-                    <asp:Button ID="Button1" runat="server" Text="Confirmer"  class="btn btn-primary" OnClick="Confirmer_Click"  />
-                    <asp:Button ID="Button2" runat="server" Text="Annuler"   class="btn btn-warning" OnClick="Annuler_Click1"  />
-					</div>
-			</div>
-		</div>
+                    	
+                    <asp:Button ID="Button1" runat="server" Text="Ajouter"  class="btn btn-facebook" OnClick="Confirmer_Click" heigth="150px" />
+                    <asp:Button ID="Button2" runat="server" Text="Annuler"   class="btn btn-dark" OnClick="Annuler_Click1"  heigth="150px"  />
+			
                 </form>
 
               </div>
@@ -142,4 +132,3 @@
 </section>
 
 </asp:Content>
-

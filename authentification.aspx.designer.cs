@@ -7,7 +7,7 @@
 // </généré automatiquement>
 //------------------------------------------------------------------------------
 
-namespace Pfe2022
+namespace WebApplication
 {
 
 
@@ -33,12 +33,12 @@ namespace Pfe2022
         protected global::System.Web.UI.WebControls.TextBox motdepasse;
 
         /// <summary>
-        /// Contrôle Button2.
+        /// Contrôle connexion.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button2;
+        protected global::System.Web.UI.WebControls.Button connexion;
     }
 }

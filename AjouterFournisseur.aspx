@@ -1,8 +1,9 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin.Master" AutoEventWireup="true" CodeBehind="AjouterFournisseur.aspx.cs" Inherits="Pfe2022.AjouterFournisseur" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Administrateur.Master" AutoEventWireup="true" CodeBehind="AjouterFournisseur.aspx.cs" Inherits="WebApplication.AjouterFournisseur" %>
+
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server"> 
 
-
+       <title>Ajouter Fournisseur</title>
     
      <script src="swalert.js" type="text/javascript"></script>
     <script>
@@ -97,7 +98,6 @@
 
 
 
-	<br />
 
     <div class="wrapper bg-white mt-sm-5">
     <h4 class="pb-4 border-bottom" >Fournisseur</h4>

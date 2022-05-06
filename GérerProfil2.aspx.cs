@@ -6,18 +6,60 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace Pfe2022
+namespace WebApplication
 {
     public partial class GérerProfil2 : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            Session["Role"] = getrole();
+
+
+            if (Session["login"] != null || Session["Role"].ToString() == "Gestionnaire")
+            {
+
+            }
+            else
+            {
+                Session.Remove("login");
+                Response.Redirect("authentification.aspx");
+            }
             prenom.Text = getPrenom();
             email2.Text = getEmail();
             tel2.Text = getTelephonee();
             Login.Text = getLogin();
             motdepasse.Text = getMotdepasse();
 
+        }
+
+        public string getrole()
+        {
+            string chaine_connexion = null;
+            string req = null;
+            SqlConnection cnn = null;
+            SqlCommand command = null;
+            string value = "";
+
+            chaine_connexion = "Data Source=DESKTOP-DTUE644;Initial Catalog=MIC;Persist Security Info=True;User ID=sa;Password=Sh123@";
+            cnn = new SqlConnection(chaine_connexion);
+            cnn.Open();
+            req = "select role from Utilisateurs where role='" + Session + "'";
+            command = new SqlCommand(req, cnn);
+
+            if (command.ExecuteScalar() == System.DBNull.Value)
+            {
+                return (value);
+                cnn.Close();
+
+            }
+            else
+            {
+
+                value = Convert.ToString(command.ExecuteScalar());
+                command.Dispose();
+                cnn.Close();
+                return (value);
+            }
         }
         public string getEmail()
         {
@@ -297,7 +339,7 @@ namespace Pfe2022
 
         protected void Confirmer_Click(object sender, EventArgs e)
         {
-            if ( email.Text == "" || tel.Text == "")
+            if (email.Text == "" || tel.Text == "")
             {
                 ClientScript.RegisterStartupScript(this.GetType(), "randomtext", "vide()", true);
             }
@@ -311,12 +353,12 @@ namespace Pfe2022
                 chaine_connexion = "Data Source=DESKTOP-DTUE644;Initial Catalog=MIC;Persist Security Info=True;User ID=sa;Password=Sh123@";
                 cnn = new SqlConnection(chaine_connexion);
                 cnn.Open();
-                req1 = "update Utilisateurs set cin='" + getCIN() + "',nom='" + getNom() + "',prenom='" + getPrenom() + "',role='" + getRole() + "',login='" + getLogin() + "',motdepasse='" + getMotdepasse() + "',telephone='" + tel2.Text + "',email='" + email2.Text + "' where login='" + Session["login"] + "'";
+                req1 = "update Utilisateurs set cin='" + getCIN() + "',nom='" + getNom() + "',prenom='" + getPrenom() + "',role='" + getRole() + "',login='" + getLogin() + "',motdepasse='" + getMotdepasse() + "',telephone='" + tel.Text + "',email='" + email.Text + "' where login='" + Session["login"] + "'";
                 command = new SqlCommand(req1, cnn);
                 command.ExecuteNonQuery();
                 cnn.Close();
                 ClientScript.RegisterStartupScript(this.GetType(), "randomtext", "modifier()", true);
-               
+
             }
         }
 

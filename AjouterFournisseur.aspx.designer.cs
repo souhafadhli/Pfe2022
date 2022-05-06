@@ -7,7 +7,7 @@
 // </généré automatiquement>
 //------------------------------------------------------------------------------
 
-namespace Pfe2022
+namespace WebApplication
 {
 
 

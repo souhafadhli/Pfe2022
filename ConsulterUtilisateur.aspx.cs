@@ -6,7 +6,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace Pfe2022
+namespace WebApplication
 {
     public partial class ConsulterUtilisateur : System.Web.UI.Page
     {
@@ -21,11 +21,12 @@ namespace Pfe2022
             }
             else
             {
-                Session.Remove("username");
+                Session.Remove("login");
                 Response.Redirect("authentification.aspx");
             }
 
         }
+
         /*get role*/
         public string getrole()
         {
@@ -149,11 +150,63 @@ namespace Pfe2022
             }
 
         }
+        /*get Cin*/
+        public string getCin()
+        {
+            string chaine_connexion = null;
+            string req = null;
+            SqlConnection cnn = null;
+            SqlCommand command = null;
+            string value = "";
 
+            chaine_connexion = "Data Source=DESKTOP-DTUE644;Initial Catalog=MIC;Persist Security Info=True;User ID=sa;Password=Sh123@";
+            cnn = new SqlConnection(chaine_connexion);
+            cnn.Open();
+            req = "select cin from Utilisateurs where cin='" + txtsearch.Text + "'";
+            command = new SqlCommand(req, cnn);
+
+            if (command.ExecuteScalar() == System.DBNull.Value)
+            {
+                return (value);
+                cnn.Close();
+
+            }
+            else
+            {
+
+                value = Convert.ToString(command.ExecuteScalar());
+                command.Dispose();
+                cnn.Close();
+                return (value);
+            }
+        }
         protected void txtsearch_TextChanged(object sender, EventArgs e)
         {
-            GridView1.DataSourceID = "SqlDataSource2";
-            GridView1.DataBind();
+            String vide = "";
+            if (txtsearch.Text == vide)
+            {
+                GridView1.DataSourceID = "SqlDataSource1";
+                GridView1.DataBind();
+            }
+
+            else
+            {
+                if (txtsearch.Text == getCin())
+                {
+                    GridView1.DataSourceID = "SqlDataSource2";
+                    GridView1.DataBind();
+                }
+
+                else
+                {
+                    GridView1.DataSourceID = "SqlDataSource1";
+                    GridView1.DataBind();
+                    ClientScript.RegisterStartupScript(this.GetType(), "randomtext", "rechercher();", true);
+
+                }
+            }
+
+
         }
     }
 }

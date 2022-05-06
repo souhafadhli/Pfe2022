@@ -7,7 +7,7 @@
 // </généré automatiquement>
 //------------------------------------------------------------------------------
 
-namespace Pfe2022
+namespace WebApplication
 {
 
 
@@ -96,12 +96,21 @@ namespace Pfe2022
         protected global::System.Web.UI.WebControls.TextBox modele;
 
         /// <summary>
-        /// Contrôle Client.
+        /// Contrôle nomclient.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList Client;
+        protected global::System.Web.UI.WebControls.DropDownList nomclient;
+
+        /// <summary>
+        /// Contrôle SqlDataSource3.
+        /// </summary>
+        /// <remarks>
+        /// Champ généré automatiquement.
+        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource3;
     }
 }

@@ -1,5 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Gestionnaire.master.cs" Inherits="Pfe2022.Gestionnaire" %>
-
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Gestionnaire.master.cs" Inherits="WebApplication.Gestionnaire" %>
 
 
 <!DOCTYPE html>
@@ -7,7 +6,8 @@
 <html>
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-       <link rel="stylesheet" href="../assets/vendors/mdi/css/materialdesignicons.min.css">
+    <title>Espace Gestionnaire</title>
+      <link rel="stylesheet" href="../assets/vendors/mdi/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="../assets/vendors/flag-icon-css/css/flag-icon.min.css">
     <link rel="stylesheet" href="../assets/vendors/css/vendor.bundle.base.css">
  
@@ -18,10 +18,9 @@
     <link rel="stylesheet" href="../assets/css/demo_2/style.css" />
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
-
 </head>
 <body>
-    <form id="form1" runat="server">
+   <form id="form1" runat="server">
 
 
 
@@ -86,7 +85,7 @@
           <div class="container">
             <ul class="nav page-navigation">
              <li class="nav-item">
-                <a class="nav-link" href="">
+                <a class="nav-link" href="Tableaudebord2.aspx">
                   <i class="mdi mdi-compass-outline menu-icon"  style="color:white"></i>
                   <span class="menu-title"   style="color:white">Tableau De Board</span>
                 </a>
@@ -115,14 +114,18 @@
                     <div class="submenu">
                   <ul class="submenu-item">
                     <li class="nav-item">
-                      <a class="nav-link" href="#">Ajouter Tissu</a>
+                      <a class="nav-link" href="GestionTissu2.aspx">Gestion Tissu</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="#">Liste Des Tissus</a>
+                      <a class="nav-link" href="GestionDefaut2.aspx">Gestion défauts Tissus</a>
+                                  <li class="nav-item">
+                      <a class="nav-link" href="Rapportqualité2.aspx">Rapport De Qualité </a>
                     </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="#">Rapport qualité Tissus</a>
+                           <li class="nav-item">
+                      <a class="nav-link" href="Defautacceptés2.aspx"> Défauts Acceptés/non acceptés </a>
                     </li>
+                    </li>
+                   
                   </ul>
                 </div>
               </li>
@@ -145,7 +148,23 @@
                 </div>
               </li>
 
-
+                  <li class="nav-item">
+                <a class="nav-link" >
+                  <i class="mdi mdi-table-large menu-icon"  style="color:white"></i>
+                  <span class="menu-title"  style="color:white">Réclamation</span>
+                       <i class="menu-arrow"  style="color:white"></i>
+                </a>
+                    <div class="submenu">
+                  <ul class="submenu-item">
+                 
+                    <li class="nav-item">
+                      <a class="nav-link" href="Listereclamationenattente.aspx">Liste des réclamations en attente</a>
+                          <a class="nav-link" href="Listereclamationacceptérefusé.aspx">Liste des réclamations acceptés/refusés</a>
+                    </li>
+                   
+                  </ul>
+                </div>
+              </li>
 
 
               <li class="nav-item">
@@ -194,9 +213,7 @@
 
     
    
-  
-    <!-- container-scroller -->
-    <!-- plugins:js -->
+   <!-- plugins:js -->
     <script src="../assets/vendors/js/vendor.bundle.base.js"></script>
     <!-- endinject -->
     <!-- Plugin js for this page -->
@@ -218,12 +235,12 @@
     <!-- endinject -->
     <!-- Custom js for this page -->
     <script src="../assets/js/dashboard.js"></script>
-        <div>
+     <div>
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>
         </div>
+            
     </form>
 </body>
 </html>
-
 

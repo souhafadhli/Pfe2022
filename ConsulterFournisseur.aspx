@@ -1,9 +1,11 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin.Master" AutoEventWireup="true" CodeBehind="ConsulterFournisseur.aspx.cs" Inherits="Pfe2022.ConsulterFournisseur" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Administrateur.Master" AutoEventWireup="true" CodeBehind="ConsulterFournisseur.aspx.cs" Inherits="WebApplication.ConsulterFournisseur" %>
+
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+       <title>Liste des fournisseurs</title>
     	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-	<link rel="stylesheet" type="text/css" href="../assets/css/styleliste.css">
+	<link rel="stylesheet" type="text/css" href="css/styleliste.css">
     <script src="swalert.js"></script>
      <script>
         
@@ -40,6 +42,7 @@
        </div>
 
             <br />
+  
                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:MICConnectionString %>" SelectCommand="SELECT * FROM [Fournisseur]"></asp:SqlDataSource>
        <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:MICConnectionString %>" SelectCommand="SELECT * FROM [Fournisseur] where  NomFournisseur=@nm ">
               <SelectParameters>
@@ -48,11 +51,11 @@
             </asp:SqlDataSource>
             <br />
            
-             
+             <center>
 				
-            <asp:GridView ID="GridView1" runat="server" class="table" AutoGenerateColumns ="False" DataKeyNames="Id" DataSourceID="SqlDataSource1" BorderColor="#CC0099" BorderStyle="None">
+            <asp:GridView ID="GridView1" runat="server" class="table" AutoGenerateColumns ="False" DataKeyNames="Id" DataSourceID="SqlDataSource1" BorderColor="#CC0099" BorderStyle="None" Width="5000px">
               <Columns>   
-          <asp:ImageField DataImageUrlField="Id" DataImageUrlFormatString="images/logo.png" HeaderText="Photo" ReadOnly="True" >
+          <asp:ImageField DataImageUrlField="Id" DataImageUrlFormatString="images/f.png" HeaderText="Photo" ReadOnly="True"  >
                         <ControlStyle Height="40px" Width="40px" />
                     </asp:ImageField>
                  
@@ -76,10 +79,10 @@
                 <asp:TemplateField  HeaderText="Action ">
                                 <ItemTemplate>
                                
-                          <asp:ImageButton CssClass="center-block" runat="server" ID="modifier"  Text="Modifier"  ImageUrl="/images/124.png" Width="30px" OnClick="Modifier_Click1" ></asp:ImageButton>
+                          <asp:ImageButton CssClass="center-block" runat="server" ID="modifier"  Text="Modifier"  ImageUrl="/images/fr.png" Width="30px" OnClick="Modifier_Click1" ></asp:ImageButton>
                                       
 
-                        <asp:ImageButton CssClass="center-block" runat="server" ID="supprimer" Text="supprimer" ImageUrl="/images/to.png" Width="30px" OnClick="supp_Click"></asp:ImageButton>
+                        <asp:ImageButton CssClass="center-block" runat="server" ID="supprimer" Text="supprimer" ImageUrl="/images/delete.png" Width="30px" OnClick="supp_Click"></asp:ImageButton>
                                          
 
                                 </ItemTemplate>
@@ -95,7 +98,7 @@
             </Columns>
           
           
-        </asp:GridView>
+        </asp:GridView></center>
                            </div>
 	</section>
                  
@@ -112,7 +115,9 @@
     <div class="row">
        
         <div class="col-md-4 border-right">
-            <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img src="images/j7.png" width="150" style="position:center"> <br /></div>
+            <div class="d-flex flex-column align-items-center text-center p-3 py-5">
+                <center><img src="images/set.png" width="350px" style="position:center"> <br />  <br /> <br />
+                    <p>Citez les informations nécessaires<br /> pour modifier un fournisseur.</p></div></center>
         </div>
         <br />
         <div class="col-md-8">
@@ -162,7 +167,7 @@
 <div class="row gutters">
 			<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
 				<div class="text-right">
-								 <asp:Button  runat="server" text="Confirmer"  class="btn btn-primary btn-lg btn-radius"   OnClick="Confirmer_Click" />  
+								 <asp:Button  runat="server" text="Confirmer"  class="btn btn-facebook btn-lg btn-radius"   OnClick="Confirmer_Click" />  
                
    <asp:Button  runat="server" text="Annuler" class="btn btn-warning btn-lg btn-radius" OnClick="Annuler_Click1"/>
 		</div>

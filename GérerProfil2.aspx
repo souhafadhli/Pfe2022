@@ -1,5 +1,8 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Gestionnaire.Master" AutoEventWireup="true" CodeBehind="GérerProfil2.aspx.cs" Inherits="Pfe2022.GérerProfil2" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Gestionnaire.Master" AutoEventWireup="true" CodeBehind="GérerProfil2.aspx.cs" Inherits="WebApplication.GérerProfil2" %>
+
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+       <title>Profil Gestionnaire</title>
      <script src="swalert.js"></script>
     <script>
         function modifier() {
@@ -20,6 +23,7 @@
     </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <center>
     <div class="container-fluid px-2 px-md-4 py-5 mx-auto">
     <div class="row d-flex justify-content-center" style="width:1750px">
         <div class="col-md-10 col-lg-9 col-xl-8">
@@ -69,6 +73,7 @@
                     
 					</div>
               
+</center>              
 			</div>
                     </div>
                     </div>
@@ -177,3 +182,4 @@
 }
     </style>
 </asp:Content>
+

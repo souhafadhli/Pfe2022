@@ -1,11 +1,12 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin.Master" AutoEventWireup="true" CodeBehind="ConsulterUtilisateur.aspx.cs" Inherits="Pfe2022.ConsulterUtilisateur" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Administrateur.Master" AutoEventWireup="true" CodeBehind="ConsulterUtilisateur.aspx.cs" Inherits="WebApplication.ConsulterUtilisateur" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+       <title>Liste des utilisateurs</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-	<link rel="stylesheet" type="text/css" href="../assets/css/styleliste.css">
+	<link rel="stylesheet" type="text/css" href="css/styleliste.css">
  <script src="swalert.js"></script>
      <script>
 
@@ -36,7 +37,11 @@
              )
          }
 
-
+         function rechercher() {
+             Swal.fire(
+                 "aucun utilisateur avec cette cin ",
+             )
+         }
 
      </script>
 
@@ -67,6 +72,7 @@
                   <asp:ControlParameter ControlID="txtsearch" Name="c" PropertyName="Text" />
               </SelectParameters>
             </asp:SqlDataSource>
+
         <asp:GridView ID="GridView1" runat="server" class="table" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="Id" DataSourceID="SqlDataSource1" ForeColor="#333333" GridLines="None">
            
             <Columns>
@@ -88,10 +94,10 @@
                       <asp:TemplateField  HeaderText="Action ">
                                 <ItemTemplate>
                                
-                          <asp:ImageButton CssClass="center-block" runat="server" ID="modifier" Text="Modifier" OnClick="Modifier_Click1" ImageUrl="/images/ed.png" Width="35px" ></asp:ImageButton>
+                          <asp:ImageButton CssClass="center-block" runat="server" ID="modifier" Text="Modifier" OnClick="Modifier_Click1" ImageUrl="/images/ea.png" Width="35px" ></asp:ImageButton>
                                       
 
-                        <asp:ImageButton CssClass="center-block" runat="server" ID="supprimer" Text="supprimer" OnClick="supp_Click" ImageUrl="/images/d.png" Width="32px"></asp:ImageButton>
+                        <asp:ImageButton CssClass="center-block" runat="server" ID="supprimer" Text="supprimer" OnClick="supp_Click" ImageUrl="/images/ga.png" Width="35px"></asp:ImageButton>
                                          
 
                                 </ItemTemplate>

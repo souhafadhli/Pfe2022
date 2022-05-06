@@ -1,5 +1,8 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Visiteur.Master" AutoEventWireup="true" CodeBehind="GérerProfil3.aspx.cs" Inherits="Pfe2022.GérerProfil3" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Visiteur.Master" AutoEventWireup="true" CodeBehind="GérerProfil3.aspx.cs" Inherits="WebApplication.GérerProfil3" %>
+
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+       <title>Profil Visiteur</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
 <link rel="stylesheet" type="text/css" href="custom.css">
 <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -23,7 +26,7 @@
     </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    
+ 
 
 
 
@@ -274,5 +277,5 @@ color:#7F7F7F;
 }
     </style>
 </body>
-</html>
+
 </asp:Content>

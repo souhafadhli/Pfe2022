@@ -6,16 +6,15 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace Pfe2022
+namespace WebApplication
 {
     public partial class authentification : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
         }
-        protected void Button2_Click(object sender, EventArgs e)
-        {
+
+        protected void connexion_Click(object sender, EventArgs e) {
             Session["login"] = login.Text;
             Session["motdepasse"] = motdepasse.Text;
             Session["Role"] = getrole();
@@ -35,16 +34,16 @@ namespace Pfe2022
                     if (getrole() == "Admin")
                     {
 
-                        Response.Redirect("espace1.aspx");
+                        Response.Redirect("EspaceAdministrateur.aspx");
                     }
                     if (getrole() == "Gestionnaire")
                     {
 
-                        Response.Redirect("espace2.aspx");
+                        Response.Redirect("EspaceGestionnaire.aspx");
                     }
                     else if (getrole() == "Visiteur")
                     {
-                        Response.Redirect("espace3.aspx");
+                        Response.Redirect("EspaceVisiteur.aspx");
                     }
 
 
@@ -58,7 +57,7 @@ namespace Pfe2022
             }
         }
 
-
+    
         public int exister()
         {
             string chaine_connexion = null;
@@ -121,7 +120,7 @@ namespace Pfe2022
 
         }
 
-
-
+     
+      
     }
-}
+    }

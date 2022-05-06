@@ -7,12 +7,30 @@
 // </généré automatiquement>
 //------------------------------------------------------------------------------
 
-namespace Pfe2022
+namespace WebApplication
 {
 
 
     public partial class ListeVisiteur
     {
+
+        /// <summary>
+        /// Contrôle txtsearch.
+        /// </summary>
+        /// <remarks>
+        /// Champ généré automatiquement.
+        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtsearch;
+
+        /// <summary>
+        /// Contrôle SqlDataSource2.
+        /// </summary>
+        /// <remarks>
+        /// Champ généré automatiquement.
+        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource2;
 
         /// <summary>
         /// Contrôle SqlDataSource1.

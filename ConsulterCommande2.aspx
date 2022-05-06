@@ -1,9 +1,12 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Gestionnaire.Master" AutoEventWireup="true" CodeBehind="ConsulterCommande2.aspx.cs" Inherits="Pfe2022.ConsulterCommande2" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Gestionnaire.Master" AutoEventWireup="true" CodeBehind="ConsulterCommande2.aspx.cs" Inherits="WebApplication.ConsulterCommande2" %>
+
+
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    
+       <title>Liste des commandes</title>
     	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-	<link rel="stylesheet" type="text/css" href="../assets/css/styleliste.css">
+	<link rel="stylesheet" type="text/css" href="css/styleliste.css">
      <script src="swalert.js" type="text/javascript"></script>
     <script>
         function supprimer() {
@@ -20,7 +23,7 @@
         }
         function client() {
             Swal.fire(
-                ' obligatoire d ajouter un client ',
+                ' obligatoire d ajouter un  client',
                 'Veuillez le vérifier et réessayer',
                 'error'
             )
@@ -28,31 +31,35 @@
         function rechercher() {
             Swal.fire(
                 "aucune commande  avec cette reference ",
-            )
+               )
         }
     </script>
+
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-
-    <section class="main-content">
+	<section class="main-content">
 		<div class="container">
             <h2 class="text-primary">Liste Des Commandes</h2>
-                   
+
+
+  <form class="search-form">
                <div class="d-flex justify-content-center px-5">
             <div class="search"> <asp:TextBox ID="txtsearch"  class="search-input" placeholder="Rechercher..." runat="server" AutoPostBack="true" OnTextChanged="txtsearch_TextChanged"></asp:TextBox> <a  class="search-icon"> <img src="images/search.png" width="25px"/> </a> </div>
  </div>
-                       
             <br />
-            <br />
-         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:MICConnectionString %>" SelectCommand="SELECT * FROM [Commande] "></asp:SqlDataSource>
         
-                       <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:MICConnectionString %>" SelectCommand="SELECT * FROM [Commande] where reference =@ref ">
+         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:MICConnectionString %>" SelectCommand="SELECT * FROM [Commande] "></asp:SqlDataSource>
+       <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:MICConnectionString %>" SelectCommand="SELECT * FROM [Commande] where reference =@ref ">
               <SelectParameters>
                   <asp:ControlParameter ControlID="txtsearch" Name="ref" PropertyName="Text" />
               </SelectParameters>
-            </asp:SqlDataSource> 
-                       
-                       <asp:GridView ID="GridView1" runat="server" class="table" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="Id" DataSourceID="SqlDataSource1" ForeColor="#333333" GridLines="None">
+            </asp:SqlDataSource>
+      
+      
+      
+      
+      
+      <asp:GridView ID="GridView1" runat="server" class="table" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="Id" DataSourceID="SqlDataSource1" ForeColor="#333333" GridLines="None">
            
             <Columns>
                  
@@ -67,10 +74,10 @@
              <asp:TemplateField  HeaderText="Action ">
                                 <ItemTemplate>
                                
-                          <asp:ImageButton CssClass="center-block" runat="server" ID="modifier" Text="Modifier"  ImageUrl="/images/m1.jpg" Width="34px" OnClick="modifier_Click"></asp:ImageButton>
+                          <asp:ImageButton CssClass="center-block" runat="server" ID="modifier" Text="Modifier"  ImageUrl="/images/ed.png" Width="32px" OnClick="modifier_Click" ></asp:ImageButton>
                                       
 
-                        <asp:ImageButton CssClass="center-block" runat="server" ID="supprimer" Text="supprimer" ImageUrl="/images/s2.png" Width="32px" OnClick="supprimer_Click"></asp:ImageButton>
+                        <asp:ImageButton CssClass="center-block" runat="server" ID="supprimer" Text="supprimer" ImageUrl="/images/fs.png" Width="32px" OnClick="supprimer_Click"></asp:ImageButton>
                                          
 
                                  </ItemTemplate>
@@ -103,7 +110,7 @@
               <div class="container-xl px-4 mt-4">
 
     <nav class="nav nav-borders">
-        <a class="nav-link active ms-0" href="" target="__blank"><b>Modifier Commande</b></a>
+      <h4> <a href="" target="__blank"><b style="color:black">Modifier Commande</b></a></h4> 
       
     </nav>
     <hr class="mt-0 mb-4">
@@ -114,7 +121,7 @@
                 <div class="card-header">Commandes</div>
                 <div class="card-body text-center">
                
-                    <img class="img-account-profile rounded-circle mb-2" src="images/78.jpg" style="height:220px">
+                    <img  src="images/cmd.jpg" style="height:250px">
              
                     <div class="small font-italic text-muted mb-4">Citez tous les informations nécessaires pour modifier les commandes.</div>
                   
@@ -134,12 +141,12 @@
                       
                             <div class="col-md-6">
                                 <label class="small mb-1" for="id">ID</label>
-                             <asp:TextBox  AutoComplete="Off" id="ID" class="form-control"  runat="server" BorderStyle="Groove"  ></asp:TextBox>
+                             <asp:TextBox  AutoComplete="Off" id="ID" class="form-control"  runat="server"  ></asp:TextBox>
                             </div>
                          
                             <div class="col-md-6">
                                 <label class="small mb-1" for="inputLastName">Référence</label>
-                                  <asp:TextBox  AutoComplete="Off" id="reference" class="form-control" BorderStyle="Groove"  runat="server"  ></asp:TextBox>
+                                  <asp:TextBox  AutoComplete="Off" id="reference" class="form-control"  runat="server"  ></asp:TextBox>
                              
                             </div>
                         </div>
@@ -148,12 +155,12 @@
                         
                             <div class="col-md-6">
                                 <label class="small mb-1" for="inputOrgName">Ordre De Production</label>
-                              <asp:TextBox  AutoComplete="Off" id="ordre" class="form-control" BorderStyle="Groove"  runat="server"  ></asp:TextBox>
+                              <asp:TextBox  AutoComplete="Off" id="ordre" class="form-control"  runat="server"  ></asp:TextBox>
                             </div>
                          
                             <div class="col-md-6">
                                 <label class="small mb-1" for="inputLocation">Lavage</label>
-                           <asp:TextBox  AutoComplete="Off" id="lavage" class="form-control" BorderStyle="Groove"  runat="server"  ></asp:TextBox>
+                           <asp:TextBox  AutoComplete="Off" id="lavage" class="form-control"  runat="server"  ></asp:TextBox>
                             </div>
                         </div>
                         
@@ -161,20 +168,17 @@
                           
                             <div class="col-md-6">
                                 <label class="small mb-1" for="inputPhone">Modéle</label>
-                              <asp:TextBox  AutoComplete="Off" id="modele" class="form-control" BorderStyle="Groove"  runat="server"  ></asp:TextBox>
+                              <asp:TextBox  AutoComplete="Off" id="modele" class="form-control"   runat="server"   ></asp:TextBox>
                             </div>
                          
                             <div class="col-md-6">
                                 <label class="small mb-1" for="inputclient">Client</label>
-                                <asp:DropDownList ID="Client" runat="server"  Height="50px" BorderStyle="Groove"   class="form-control"> 
-                                    <asp:ListItem>  </asp:ListItem>
-                            	<asp:ListItem>Zara</asp:ListItem>
-                            <asp:ListItem>Bershka</asp:ListItem>
-                            <asp:ListItem>Pull&Bear</asp:ListItem>
-                        </asp:DropDownList>
+                               <asp:DropDownList ID="nomclient" runat="server"  DataSourceID="SqlDataSource3" DataTextField="nom" DataValueField="nom" class="form-control"></asp:DropDownList>
+                    <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:MICConnectionString %>" SelectCommand="SELECT [nom] FROM [Client]"></asp:SqlDataSource>
+               
                             </div>
                         </div>
-                      <asp:Button  runat="server" text="Confirmer"  class="btn btn-primary " OnClick="Confirmer_Click"/>  
+                      <asp:Button  runat="server" text="Confirmer"  class="btn btn-facebook " OnClick="Confirmer_Click"/>  
                
    <asp:Button  runat="server" text="Annuler" class="btn btn-warning" OnClick="Annuler_Click1"/>
                         
@@ -188,7 +192,7 @@
 </div>
 
 		<style type="text/css">
-       .search {
+          .search {
 		          width: 55%;
     margin-bottom: auto;
     margin-top: 20px;
@@ -238,7 +242,6 @@
     position: relative;
     border-radius: 5px
 }
-
 
       body{margin-top:20px;
 background-color:#f2f6fc;
@@ -370,5 +373,5 @@ body {
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-
 </asp:Content>
+
